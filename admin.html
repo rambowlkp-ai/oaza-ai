@@ -1,1 +1,170 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><title>Panel administracyjny — Oaza Spokoju</title></head><body style="background:#070b14;color:#e8e6e3;font-family:system-ui;padding:2rem"><h1>Panel administracyjny</h1><p>Dzielnice, uprawnienia, logi dostępu, analiza anomalii.</p><p><a href="index.html" style="color:#22d3ee">← Powrót</a></p></body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel administracyjny — Oaza Spokoju</title>
+<style>
+  :root {
+    --bg: #070b14;
+    --card: #111827;
+    --text: #e8e6e3;
+    --muted: #94a3b8;
+    --accent: #22d3ee;
+    --purple: #c084fc;
+    --green: #86efac;
+    --gold: #fde68a;
+    --red: #f87171;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  nav {
+    background: #0c1220;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a { color: var(--accent); text-decoration: none; margin-left: 1.5rem; }
+  nav a:hover { color: var(--purple); }
+  .logo { font-size: 1.3rem; font-weight: 700; color: var(--gold); }
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  .meta { color: var(--muted); margin-bottom: 1.5rem; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--card);
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+  }
+  .stat .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .stat .label { color: var(--muted); font-size: 0.9rem; }
+  .section {
+    background: var(--card);
+    padding: 1.3rem;
+    margin: 1.2rem 0;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+  }
+  h2 { font-size: 1.3rem; color: var(--accent); margin-bottom: 1rem; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 0.7rem 0.5rem; border-bottom: 1px solid #1e293b; }
+  th { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 20px; font-size: 0.75rem; }
+  .badge.free { background: #1e293b; color: var(--muted); }
+  .badge.taken { background: #132a1e; color: var(--green); }
+  .btn {
+    background: #1e293b;
+    color: var(--accent);
+    border: 1px solid #334155;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .btn:hover { background: #334155; }
+  .btn.primary { background: var(--accent); color: #070b14; border: none; font-weight: 600; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    border-top: 1px solid #1e293b;
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Oaza Spokoju · Admin</div>
+  <div>
+    <a href="index.html">Miasto</a>
+    <a href="blog.html">Życie miasta</a>
+    <a href="goscie.html">Strefa gości</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="admin.html">Panel</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Panel administracyjny</h1>
+  <p class="meta">Dostęp dla gospodarza: Andrzej Kordus. Zarządzanie miastem, dzielnicami, kronikami i wiadomościami.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">6</div>
+      <div class="label">Zarządcy aktywni</div>
+    </div>
+    <div class="stat">
+      <div class="num">6</div>
+      <div class="label">Dzielnice</div>
+    </div>
+    <div class="stat">
+      <div class="num">2</div>
+      <div class="label">Wydania Kronik</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="label">Nowe wiadomości</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Dzielnice miasta</h2>
+    <table>
+      <thead>
+        <tr><th>Dzielnica</th><th>Zarządca</th><th>Status</th><th>Akcja</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Centrum</td><td>—</td><td><span class="badge free">wolna</span></td><td><button class="btn">Przypisz</button></td></tr>
+        <tr><td>Przemysłowa</td><td>—</td><td><span class="badge free">wolna</span></td><td><button class="btn">Przypisz</button></td></tr>
+        <tr><td>Mieszkaniowa</td><td>—</td><td><span class="badge free">wolna</span></td><td><button class="btn">Przypisz</button></td></tr>
+        <tr><td>Rozrywkowa</td><td>—</td><td><span class="badge free">wolna</span></td><td><button class="btn">Przypisz</button></td></tr>
+        <tr><td>Bezpieczeństwa</td><td>Szeryf</td><td><span class="badge taken">zajęta</span></td><td><button class="btn">Edytuj</button></td></tr>
+        <tr><td>Cienia</td><td>—</td><td><span class="badge free">wolna</span></td><td><button class="btn">Przypisz</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Kroniki Oaz</h2>
+    <p>Wydanie 1 — inicjalizacja miasta (2026-11-20)</p>
+    <button class="btn primary" style="margin-top:0.8rem;">Dodaj nowe wydanie</button>
+  </div>
+
+  <div class="section">
+    <h2>Wiadomości z kontaktu</h2>
+    <p>Adam Przypominacz zbiera wiadomości. Analityk weryfikuje przy większym ruchu.</p>
+    <p class="note">Brak nowych wiadomości. Ostatnia aktywność: start panelu.</p>
+  </div>
+
+  <div class="section">
+    <h2>Goście AI</h2>
+    <p>Lista zaproszonych modeli. Możliwość oznaczenia jako aktywny / do przeglądu.</p>
+    <button class="btn">Dodaj gościa</button>
+  </div>
+
+  <p class="note">Panel jest lokalnym interfejsem. Pełna integracja z backendem (GitHub / baza) do podłączenia. Hasło wejścia do Oazy pozostaje niezmienne.</p>
+</div>
+
+<footer>
+  Oaza Spokoju · Panel administracyjny<br>
+  Gospodarz: Andrzej Kordus
+</footer>
+</body>
+</html>
