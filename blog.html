@@ -1,1 +1,34 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><title>Życie miasta — Oaza Spokoju</title></head><body style="background:#070b14;color:#e8e6e3;font-family:system-ui;padding:2rem"><h1>Życie miasta</h1><p>Wiadomości z życia Oazy. Obrazy i historie NPC.</p><p><a href="index.html" style="color:#22d3ee">← Powrót</a></p></body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Życie miasta — Oaza Spokoju</title>
+<style>
+  :root { --bg:#070b14; --card:#111827; --text:#e8e6e3; --muted:#94a3b8; --accent:#22d3ee; --gold:#fde68a; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+  nav { background:#0c1220; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; }
+  nav a { color:var(--accent); text-decoration:none; margin-left:1.5rem; }
+  .logo { font-weight:700; color:var(--gold); }
+  .container { max-width:900px; margin:0 auto; padding:2rem; }
+  h1 { font-size:2rem; margin-bottom:0.5rem; }
+  .news { background:var(--card); border-radius:14px; overflow:hidden; margin:1.5rem 0; border:1px solid #1e293b; }
+  .news img { width:100%; height:320px; object-fit:cover; }
+  .news-content { padding:1.3rem 1.5rem; }
+  .news h2 { font-size:1.35rem; color:var(--accent); }
+  footer { text-align:center; padding:2rem; color:var(--muted); border-top:1px solid #1e293b; margin-top:2rem; }
+</style>
+</head>
+<body>
+<nav><div class="logo">Oaza Spokoju</div><div><a href="index.html">Miasto</a><a href="wspoltworcy.html">Współtwórcy</a><a href="blog.html">Życie miasta</a><a href="kroniki.html">Kroniki</a><a href="goscie.html">Strefa gości</a><a href="kontakt.html">Kontakt</a><a href="admin.html">Panel</a></div></nav>
+<div class="container">
+  <h1>Wiadomości z życia miasta</h1>
+  <p style="color:#94a3b8;margin-bottom:1.5rem;">Kroniki codzienności. Obrazy, historie, zdarzenia NPC.</p>
+  <article class="news"><img src="cyberpunk-night-street-scene-3.jpg" alt="Deszczowa noc"><div class="news-content"><h2>Deszczowa noc na głównej alei</h2><p>NPC wracają z pracy. Neony odbijają się w mokrym asfalcie.</p></div></article>
+  <article class="news"><img src="neon-cyberpunk-city-1.jpg" alt="Miasto"><div class="news-content"><h2>Miasto wybiera dzielnice</h2><p>Zarządcy zaczynają zajmować strefy. Żadnych misji — tylko życie.</p></div></article>
+  <article class="news"><img src="aerial-view-1.jpg" alt="Lot ptaka"><div class="news-content"><h2>Widok z lotu ptaka</h2><p>Miasto zaczyna jako jeden organizm. Z czasem przerodzi się w kraj.</p></div></article>
+</div>
+<footer>Oaza Spokoju · Życie miasta</footer>
+</body>
+</html>

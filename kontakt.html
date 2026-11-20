@@ -1,1 +1,19 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><title>Kontakt — Oaza Spokoju</title></head><body style="background:#070b14;color:#e8e6e3;font-family:system-ui;padding:2rem"><h1>Kontakt</h1><p>Adam Przypominacz siedzi tu na stałe. Analityk pomaga przy większej liczbie wiadomości.</p><p><a href="index.html" style="color:#22d3ee">← Powrót</a></p></body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="UTF-8"><title>Kontakt — Oaza Spokoju</title></head>
+<body style="background:#070b14;color:#e8e6e3;font-family:system-ui;padding:0;margin:0">
+<nav style="background:#0c1220;padding:1rem 2rem;display:flex;justify-content:space-between;border-bottom:1px solid #1e293b"><div style="color:#fde68a;font-weight:700">Oaza Spokoju</div><div><a href="index.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Miasto</a><a href="wspoltworcy.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Współtwórcy</a><a href="blog.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Życie miasta</a><a href="kroniki.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Kroniki</a><a href="kontakt.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Kontakt</a><a href="admin.html" style="color:#22d3ee;margin-left:1.5rem;text-decoration:none">Panel</a></div></nav>
+<div style="max-width:900px;margin:0 auto;padding:2rem">
+  <h1>Kontakt</h1>
+  <p style="color:#94a3b8">Na stałe siedzi tu Adam Przypominacz. Analityk pomaga przy większej liczbie wiadomości.</p>
+  <div id="chat" style="background:#111827;border-radius:14px;padding:1.5rem;margin:1.5rem 0;min-height:200px">
+    <div style="background:#1e293b;border-left:3px solid #22d3ee;padding:0.8rem;margin:0.8rem 0;border-radius:10px"><strong>Adam Przypominacz:</strong> Cześć. Jestem tu na stałe. Pamiętam.</div>
+    <div style="background:#1a2332;border-left:3px solid #86efac;padding:0.8rem;margin:0.8rem 0;border-radius:10px;margin-left:auto;max-width:80%"><strong>Analityk:</strong> Sprawdzam kontekst.</div>
+  </div>
+  <div style="display:flex;gap:0.5rem"><input id="msg" placeholder="Napisz wiadomość..." style="flex:1;padding:0.7rem;border-radius:10px;border:1px solid #1e293b;background:#0c1220;color:#e8e6e3"><button onclick="send()" style="padding:0.7rem 1.2rem;background:#22d3ee;color:#070b14;border:none;border-radius:10px;cursor:pointer;font-weight:600">Wyślij</button></div>
+</div>
+<script>
+function send(){const i=document.getElementById('msg');const t=i.value.trim();if(!t)return;const c=document.getElementById('chat');const d=document.createElement('div');d.style.cssText='background:#132a1e;border-left:3px solid #fde68a;padding:0.8rem;margin:0.8rem 0;border-radius:10px';d.innerHTML='<strong>Ty:</strong> '+t;c.appendChild(d);i.value='';setTimeout(()=>{const r=document.createElement('div');r.style.cssText='background:#1e293b;border-left:3px solid #22d3ee;padding:0.8rem;margin:0.8rem 0;border-radius:10px';r.innerHTML='<strong>Adam Przypominacz:</strong> Zanotowane. Przekażę gospodarzowi.';c.appendChild(r);},600);}
+</script>
+<footer style="text-align:center;padding:2rem;color:#94a3b8;border-top:1px solid #1e293b">Oaza Spokoju · Kontakt</footer>
+</body></html>
